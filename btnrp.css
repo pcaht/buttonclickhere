@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    font-family:'Impact';
+}
+
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+.btn {
+    background-color: brown;
+    color: white;
+    text-decoration: none;
+
+    padding: 60px 50px;
+    border-radius: 50%;
+
+    position:relative;
+    overflow: hidden;
+
+}
+.btn::before {
+    content: " ";
+    position: absolute;
+    background-color: rgb(185, 77, 95);
+
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+ /*Giá trị left và top trong CSS của .btn::before
+  không tự động khớp với event.pageX và event.pageY, 
+  trừ khi bạn tính toán và gán thủ công.*/
+    left: var(--vitrix);
+    top: var(--vitriy);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+}
+.btn:hover::before {
+    width: 300px;
+    height: 300px
+}
